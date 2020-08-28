@@ -1,0 +1,15 @@
+**/migrations/**
+!**/migrations
+!**/migrations/__init__.py
+*.pyc
+.idea/
+db.json
+debug.log
+media/
+rs.sh
+**/logs/**
+reports/junit.xml
+*.pdf
+.vscode/
+*.DS_Store
+**/setup_docs/diagrams/**

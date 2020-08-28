@@ -1,0 +1,73 @@
+{% load static %}
+
+
+<div id="main-menu" data-scroll-to-active="true" class="main-menu menu-fixed menu-light menu-shadow">
+
+    <div class="main-menu-header img_wrap pt-1 bg-light">
+
+      <div class="grow pic">
+
+          <div class="media-list">
+        <div class="media mb-0">
+            <div class="media-left">
+				
+        {% if profile_photo %}
+           <!-- <img class="media-object rounded-circle" src={{ profile_photo }} alt="Profile Image" width="44" height="44" /> -->
+
+        {% else %}
+            <div class="text-center" id="left-profile-image-new">RK</div>
+        {% endif %}
+			</div>
+            <div class="media-body">
+                  <h4 class="primary-blue"> Rahul <br> Gupta</h4> 
+                    
+            </div>
+        </div>
+    </div>
+
+          
+      </div>
+      </a>
+    </div>
+    <!-- / main menu header-->
+    <div class="main-menu-content" id="tour-step1">
+        <ul id="main-menu-navigation" data-menu="menu-navigation" class="navigation navigation-main" >
+         
+
+
+
+
+         
+          <li class="nav-item pt-05"> <a href="javascript:void(0)"><div class="navigation-icons profile"></div> Quiz</a>
+            <ul class="menu-content">
+                <li class="nav-item {% if active_tab == 'personal_docs' %} active {% endif %} ">
+                  <a href="{% url 'poll:dashboard' %}" class="menu-item" >Quiz Dashboard</a>
+                </li>
+                <li class="nav-item {% if active_tab == 'investment' %} active {% endif %} "><a href="#" class="menu-item">Quiz Result</a>
+                </li> 
+
+                <li class="nav-item {% if active_tab == 'letter' %} active {% endif %} "><a href="#" class="menu-item">Quiz Info</a>
+                </li>
+              </ul>
+            </li>
+  
+
+
+
+
+            <li class="nav-item pt-05"> <a href="javascript:void(0)"><div class="navigation-icons profile"></div> User Setting</a>
+              <ul class="menu-content">
+                  <li class="nav-item {% if active_tab == 'personal_docs' %} active {% endif %} ">
+                    <a href="#" class="menu-item" >Profile</a>
+                  </li>
+                  <li class="nav-item {% if active_tab == 'investment' %} active {% endif %} "><a href="#" class="menu-item">Social Links</a>
+                  </li> 
+                </ul>
+              </li>
+
+
+            <div class="dropdown-divider"></div>   
+
+            </ul>
+ </div>
+</div>

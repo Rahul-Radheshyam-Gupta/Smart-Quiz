@@ -1,0 +1,1 @@
+Tz.addTzInfo('Africa/Lubumbashi', new Tz.StaticTzInfo(7200))

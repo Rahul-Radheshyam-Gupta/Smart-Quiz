@@ -1,0 +1,48 @@
+{% extends 'poll/base1.html' %}
+{% block heading %}
+<div class="jumbotron text-center">
+    <h3>Dashboard</h3>
+  </div>
+{% endblock heading %}
+
+{% block content %}
+
+<div class="container">
+        <h2>Quiz Categories</h2>
+        <p>To take quiz by categories </p>                        
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th class="text-center">Sr. No.</th>
+              <th class="text-center">Topic Name</th>
+              <th class="text-center">Details</th>
+              <th class="text-center"> Result </th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for item in question_master %}
+                <tr>
+                  <td class="text-center">{{ forloop.counter }}</td>
+                  <td class="text-center"><a href ="{% url 'poll:quiz' item.id  %}">{{item.title}}</a></td>
+                  <td class="text-center"> <a href="javascript:void(0);" data-toggle="collapse" data-target="#detail{{ forloop.counter }}">
+                            <p class="text-center"> Know More </p>
+                          </a>
+                      <div id="detail{{ forloop.counter }}" class="collapse">
+                        {% if item.description %}
+                          <p>{{item.description}}</p>
+                        {% else %}
+                          <p>No Description</p>
+                        {% endif %}
+                      </div>
+                  </td>
+                  <td class="text-center"> <a href ="{% url 'poll:quiz-detail' item.id  %}">view</a></td> </td>
+                </tr>
+            {% empty %}
+                <p class="text-center">No Data</p>
+            {% endfor %}
+            
+          </tbody>
+        </table>
+      </div>
+
+{% endblock content %}

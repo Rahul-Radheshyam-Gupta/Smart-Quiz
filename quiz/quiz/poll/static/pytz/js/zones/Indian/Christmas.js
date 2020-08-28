@@ -1,0 +1,1 @@
+Tz.addTzInfo('Indian/Christmas', new Tz.StaticTzInfo(25200))

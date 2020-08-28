@@ -1,0 +1,1 @@
+Tz.addTzInfo('Pacific/Johnston', new Tz.StaticTzInfo(-36000))

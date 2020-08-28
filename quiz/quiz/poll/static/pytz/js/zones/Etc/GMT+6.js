@@ -1,0 +1,1 @@
+Tz.addTzInfo('Etc/GMT+6', new Tz.StaticTzInfo(-21600))

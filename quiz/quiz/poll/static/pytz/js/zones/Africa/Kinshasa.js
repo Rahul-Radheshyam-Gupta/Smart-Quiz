@@ -1,0 +1,1 @@
+Tz.addTzInfo('Africa/Kinshasa', new Tz.StaticTzInfo(3600))

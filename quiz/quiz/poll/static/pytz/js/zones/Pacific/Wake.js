@@ -1,0 +1,1 @@
+Tz.addTzInfo('Pacific/Wake', new Tz.StaticTzInfo(43200))

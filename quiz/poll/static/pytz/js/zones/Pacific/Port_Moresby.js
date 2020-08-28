@@ -1,0 +1,1 @@
+Tz.addTzInfo('Pacific/Port_Moresby', new Tz.StaticTzInfo(36000))

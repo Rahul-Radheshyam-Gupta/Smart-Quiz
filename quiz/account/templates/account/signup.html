@@ -1,0 +1,26 @@
+{% extends 'account/base.html'%}
+{% block content %}
+<div class="container">
+{{error}}
+    <form class="form-horizontal form-simple" method="post" action="/account/signup/" novalidate>
+      {% csrf_token %}
+    
+      <fieldset class="form-group has-feedback has-icon-left mb-1">
+        <label for="user-name"> User Name</label>
+        <input class="form-control form-control-lg" type="text" id="user-name" name="username" placeholder="User Name">
+      </fieldset>
+     
+      <fieldset class="form-group has-feedback has-icon-left">
+        <label for="user-password1"> Password</label>
+        <input type="password" class="form-control form-control-lg" id="user-password" name="password1" placeholder="Enter Password" required>
+      </fieldset>
+
+      <fieldset class="form-group has-feedback has-icon-left">
+        <label for="user-password"> Please Enter Password Again</label>
+        <input type="password" class="form-control form-control-lg" id="user-password" name="password2" placeholder="Re-Enter Password" required>
+      </fieldset>
+      <button type="submit" class="btn btn-primary btn-lg btn-block"><i class="icon-unlock2"></i> Register</button>
+    </form>
+
+</div>
+{% endblock content %}

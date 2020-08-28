@@ -1,0 +1,144 @@
+/* RESPONSIVE CSS
+-------------------------------------------------- */
+
+
+/* Large Devices, Wide Screens */
+
+@media (max-width: 1400px) {
+    p-24
+    {
+        padding:27px;
+    }
+    .left-half {
+    flex: 1;
+    padding: 0rem 1rem 1rem ;
+    justify-content: center;
+    background: #fff;
+      background-image: url("../img/login-img.jpg") !important;
+      background-repeat: no-repeat;
+      background-position: right top;
+}
+
+}
+
+
+/* Large Devices, Wide Screens */
+@media (max-width: 1200px) {
+ 
+}
+
+
+/* Medium Devices, Desktops */
+@media (max-width: 1024px) {
+}
+
+
+/* Medium Devices, Desktops */
+@media (max-width: 992px) {
+
+
+    body.vertical-layout.vertical-menu .content, body.vertical-layout.vertical-menu .footer {
+        margin-left: 0px;
+    }
+
+    body.vertical-layout.vertical-menu .main-menu {
+    width: 0px;
+}
+}
+
+@media (min-width: 1024px) {
+
+   
+}
+
+
+/* Small Devices, Tablets */
+@media (max-width: 768px) {
+     /*Sign Up CSS*/
+.signup-title {font-size: 25px;line-height: 37px;}.responsive-logo-tn{height: 50px; width: auto }.sleft-half {padding: 0rem;}.tn-domain {font-size: 11px;}
+.domain-icon {padding-left: 41px;font-size: 17px;line-height: 24px;}.s2left-half {padding: 0rem;} .logo-signup-position {left: 1.5rem;}
+.signups2-title {font-size: 34px;line-height: 39px;}.signups3-title {font-size: 23px;line-height: 35px;word-break: break-all;}
+
+        .brand-title
+    {
+         margin-top: 16px;
+        margin-left: 0px;   
+    }
+   /*  .row-eq-height
+    {
+        display:block;
+    }*/
+
+.card-block {
+    padding: 0.85rem;
+}
+
+     
+}
+
+
+
+/* Extra Small Devices, Phones */
+@media (max-width: 480px) {
+/*New Sign Up CSS*/
+.s2left-half {justify-content: normal;}
+
+    .lead {
+    font-size: 1rem;
+    }
+
+.valign-del
+{
+    margin-top:25px;
+}
+
+.tripex-body-padding
+{
+    padding: 0rem 0rem 2.75rem;
+}
+.logout-padding {
+    padding: 13px;
+}
+
+       .thin-seperator-right
+{
+    border-right:0;
+}
+
+    
+
+       .brand-title
+    {
+         margin-top: 10px;
+        margin-left: 0px;
+    }
+
+    aside.vertical-layout.vertical-menu .main-menu {
+    width: 240px;
+}
+    .m-b-xs-20
+    {
+        margin-bottom:20px;
+    }
+    
+}
+
+
+/* Custom, iPhone Retina */
+
+@media (max-width: 370px) {
+    .brand-title
+    {
+        width: 200px;
+    }
+
+}
+
+
+@media (max-width: 320px) {
+    .brand-title
+    {
+        width: 200px;
+    }
+
+}

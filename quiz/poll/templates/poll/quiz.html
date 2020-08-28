@@ -1,0 +1,197 @@
+{% extends 'poll/base1.html' %}
+
+{% block heading %}
+
+    quiz page
+{% endblock heading %}
+
+
+{% block content %}
+
+<style>
+        body{ 
+            margin-top:40px; 
+        }
+        
+        .stepwizard-step p {
+            margin-top: 10px;
+        }
+        
+        .stepwizard-row {
+            display: table-row;
+        }
+        
+        .stepwizard {
+            display: table;
+            width: 100%;
+            position: relative;
+        }
+        
+        .stepwizard-step button[disabled] {
+            opacity: 1 !important;
+            filter: alpha(opacity=100) !important;
+        }
+        
+        .stepwizard-row:before {
+            top: 14px;
+            bottom: 0;
+            position: absolute;
+            content: " ";
+            width: 100%;
+            height: 1px;
+            background-color: #ccc;
+            z-order: 0;
+        
+        }
+        
+        .stepwizard-step {
+            display: table-cell;
+            text-align: center;
+            position: relative;
+        }
+        
+        .btn-circle {
+          width: 30px;
+          height: 30px;
+          text-align: center;
+          padding: 6px 0;
+          font-size: 12px;
+          line-height: 1.428571429;
+          border-radius: 15px;
+        }
+
+        .choice {
+            padding-right:10px ;
+        }
+</style>
+
+
+
+<div class="container">
+        <br><br><br>
+        <div class="stepwizard">
+            <div class="stepwizard-row setup-panel">
+            {% for item in quiz_data %}
+                <div class="stepwizard-step">
+                    <a href="#step-1" type="button" class="btn btn-primary btn-circle">{{forloop.counter}}</a>
+                    <p></p>
+                </div>
+            {% endfor %}
+            </div>
+        </div>
+        <br>
+        <form role="form">
+            <div class="card quiz">
+                
+                {% for item in quiz_data %}
+                    <div class="row setup-content" id="step-{{forloop.counter}}">
+                            <div class="col-xs-12">
+                                <div class="col-md-12 question_div">
+                                    <h3> Question {{forloop.counter}}</h3>
+                                    <div class="form-group">
+                                        <label class="control-label" >{{item.question.question_text}}</label>
+                                    </div>
+                                    <hr><br>{{item}}
+                                    <div class="form-group">
+                                        {% for choice in item.choices %}
+                                            <div class="choice_div">
+                                                <label class="container"> {{forloop.counter}} &nbsp;. &nbsp;&nbsp; {{choice.choice_text}}
+                                                <input type="radio" id="choice" class="pull-right " data-qm="{{item.question_master}}" data-q="{{item.question.id}}" value="{{choice.id}}"  checked="checked" name="choice">
+                                                <span class="checkmark"></span>
+                                                </label>
+                                            </div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                                <br><hr><br>
+                                <button class="btn btn-primary nextBtn btn-lg pull-right" id="next_question" data-qm="{{item.question_master}}" data-q="{{item.question.id}}" type="button" >Next</button> 
+                            </div>
+                        </div>
+                {% endfor %}
+            </div>
+        </form>
+        </div>
+
+
+
+<script>
+
+
+    $(document).ready(function () {
+
+        var navListItems = $('div.setup-panel div a'),
+                allWells = $('.setup-content'),
+                allNextBtn = $('.next1Btn');
+    
+        allWells.hide();
+    
+        navListItems.click(function (e) {
+            e.preventDefault();
+            var $target = $($(this).attr('href')),
+                    $item = $(this);
+    
+            if (!$item.hasClass('disabled')) {
+                navListItems.removeClass('btn-primary').addClass('btn-default');
+                $item.addClass('btn-primary');
+                allWells.hide();
+                $target.show();
+                $target.find('input:eq(0)').focus();
+            }
+        });
+    
+        allNextBtn.click(function(){
+            var curStep = $(this).closest(".setup-content"),
+                curStepBtn = curStep.attr("id"),
+                nextStepWizard = $('div.setup-panel div a[href="#' + curStepBtn + '"]').parent().next().children("a"),
+                curInputs = curStep.find("input[type='text'],input[type='url']"),
+                isValid = true;
+    
+            $(".form-group").removeClass("has-error");
+            for(var i=0; i<curInputs.length; i++){
+                if (!curInputs[i].validity.valid){
+                    isValid = false;
+                    $(curInputs[i]).closest(".form-group").addClass("has-error");
+                }
+            }
+    
+            if (isValid)
+                nextStepWizard.removeAttr('disabled').trigger('click');
+        });
+    
+        $('div.setup-panel div a.btn-primary').trigger('click');
+
+
+
+    
+
+
+
+            var btns = allNextBtn = $('.nextBtn');
+            for(var i=0; i<btns.length;i++){
+                btns[i].addEventListener('click',function(){
+                    var question = this.dataset.q;
+                    var question_master = this.dataset.qm
+                    var choice = $('input[name=choice]:checked').val()
+
+                    $.ajax({
+                        url: "{% url "poll:add" %}" ,
+                        data:{csrfmiddlewaretoken: '{{ csrf_token }}',
+                            choice:choice,
+                            question:question,
+                            question_master:question_master
+                            },
+                        type: 'POST',
+                        dataType: 'html',
+                        //success: function(data){  toastr.success("Successfully cancelled.", 'Success', { "closeButton": true, positionClass: 'toast-top-right', containerId: 'toast-top-right'}); }
+                    });
+                    var current_div = $(this).parent()
+                    current_div.next('.question_div').show()
+                    current_div.hide()
+                    })
+                }
+
+            });
+
+</script>
+
+{% endblock content %}

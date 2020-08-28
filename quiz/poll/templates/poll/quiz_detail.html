@@ -1,0 +1,40 @@
+{% extends 'poll/base1.html' %}
+{% block heading %}
+<div class="jumbotron text-center">
+    <h3>Quiz Detail</h3>
+  </div>
+{% endblock heading %}
+
+{% block content %}
+
+<div class="container">
+        <h2>Quiz Detail</h2>
+        <p>Breif detail of quiz you attempted </p>
+        <hr>                        
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>Sr. No.</th>
+              <th>Question</th>
+              <th>Selected Choice</th>
+              <th> Correct Choice </th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for item in data %}
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td> {{item.question.question_text }}</td>
+                    <td> {{item.selected_choice.choice_text}}</td>
+                    <td> {{item.correct_choice.choice_text}}</td> 
+                </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+        {% if data %}
+        {% else %}
+            <h3 style="margin-left:30px ">You have not taken this quiz</h3>
+        {% endif %}
+      </div>
+
+{% endblock content %}

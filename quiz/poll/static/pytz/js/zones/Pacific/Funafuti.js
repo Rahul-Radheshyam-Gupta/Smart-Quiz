@@ -1,0 +1,1 @@
+Tz.addTzInfo('Pacific/Funafuti', new Tz.StaticTzInfo(43200))

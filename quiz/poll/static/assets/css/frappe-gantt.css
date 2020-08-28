@@ -1,0 +1,212 @@
+.gantt .grid-background {
+  fill: none; }
+
+.gantt .grid-header {
+  fill: #ffffff;
+  stroke: #e0e0e0;
+  stroke-width: 1.4; }
+
+.gantt .grid-row {
+  fill: #ffffff; }
+
+.gantt .grid-row:nth-child(even) {
+  fill: #f5f5f5; }
+
+.gantt .row-line {
+  stroke: #ebeff2; }
+
+.gantt .tick {
+  stroke: #e0e0e0;
+  stroke-width: 0.2; }
+  .gantt .tick.thick {
+    stroke-width: 0.4;
+    stroke: #000;
+  }
+
+.gantt .today-highlight {
+  fill: #fcf8e3;
+  opacity: 0.5; }
+
+.gantt .arrow {
+  fill: none;
+  stroke: #666;
+  stroke-width: 1.4; }
+
+.gantt .bar {
+  fill: #D1C4E9;
+  stroke: #8D99A6;
+  stroke-width: 0;
+  transition: stroke-width .3s ease;
+  user-select: none; }
+
+.gantt .bar-progress {
+  fill: #a3a3ff; }
+
+.gantt .bar-invalid {
+  fill: transparent;
+  stroke: #8D99A6;
+  stroke-width: 1;
+  stroke-dasharray: 5; }
+  .gantt .bar-invalid ~ .bar-label {
+    fill: #555; }
+
+.gantt .bar-label {
+  fill: #fff;
+  dominant-baseline: central;
+  text-anchor: middle;
+  font-size: 12px;
+  font-weight: lighter; }
+  .gantt .bar-label.big {
+    fill: #555;
+    text-anchor: start; }
+
+.gantt .handle {
+  fill: #ddd;
+  cursor: ew-resize;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .3s ease; }
+
+.gantt .bar-wrapper {
+  cursor: pointer;
+  outline: none; }
+  .gantt .bar-wrapper:hover .bar {
+    fill: #D1C4E9; }
+  .gantt .bar-wrapper:hover .bar-progress {
+    fill: #7A54D8; }
+  .gantt .bar-wrapper:hover .handle {
+    visibility: visible;
+    opacity: 1; }
+  .gantt .bar-wrapper.active .bar {
+    fill: #D1C4E9; }
+  .gantt .bar-wrapper.active .bar-progress {
+    fill: #8a8aff; }
+
+.gantt .lower-text, .gantt .upper-text {
+  font-size: 12px;
+  text-anchor: middle; }
+
+.gantt .upper-text {
+  fill: #000; }
+
+.gantt .lower-text {
+  fill: #333; }
+
+.gantt .hide {
+  display: none; }
+
+.gantt-container {
+  position: relative;
+  overflow: auto;
+  font-size: 10px; }
+  .gantt-container .popup-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+    #color: #959da5;
+    border-radius: 3px; 
+      background: #fff;
+    display: inline-block;
+    padding: 12px;
+    color: black;
+    border:1px solid #EEEEEE;
+    min-width: 200px;
+  }
+    .gantt-container .popup-wrapper .title {
+      border-bottom: 3px solid #a3a3ff;
+      padding: 8px; }
+    .gantt-container .popup-wrapper .subtitle {
+      padding: 8px;
+      color: #dfe2e5; }
+    .gantt-container .popup-wrapper .pointer {
+      position: absolute;
+      height: 5px;
+      margin: 0 0 0 -5px;
+      border: 5px solid transparent;
+      border-top-color: rgba(0, 0, 0, 0.8); }
+
+/*
+.gant_task  {
+  fill: #BA68C8 !important;
+}*/
+
+.gantt .gantt_bucket .bar-progress {
+    fill: #7A54D8;
+}
+
+.gantt .gantt_bucket.active .bar {
+  fill: #D1C4E9;
+  stroke: #8D99A6;
+  stroke-width: 0;
+  transition: stroke-width .3s ease;
+  user-select: none; 
+}
+.gantt .gantt_bucket.active .bar-progress {
+    fill: #7A54D8;
+}
+
+.gantt .gantt_task .bar {
+  fill: #E1BEE7;
+  stroke: #E1BEE7;
+  stroke-width: 0;
+  transition: stroke-width .3s ease;
+  user-select: none; 
+}
+.gantt .gantt_task.active .bar {
+  fill: #E1BEE7;
+  stroke: #E1BEE7;
+  stroke-width: 0;
+  transition: stroke-width .3s ease;
+  user-select: none; 
+}
+
+
+.gantt .gantt_task .bar-progress {
+    fill: #BA68C8;
+}
+
+.gantt .gantt_task.active .bar-progress {
+   fill: #BA68C8;
+}
+
+.gantt .gantt_task:hover .bar {
+    fill: #E1BEE7 !important; 
+}
+.gantt .gantt_task:hover .bar-progress {
+  fill: #BA68C8 !important;
+}
+
+
+.gantt .gantt_bucket .bar-wrapper.active .bar {
+    fill: #D1C4E9; }
+.gantt .gantt_bucket .bar-wrapper.active .bar-progress {
+fill:  #7A54D8; }
+
+.gantt .gantt_task .bar-wrapper.active .bar {
+    fill:  #E1BEE7; }
+.gantt .gantt_task .bar-wrapper.active .bar-progress {
+fill:  #BA68C8; }
+
+
+.gantt .bar-label {
+    fill: #fff;
+    dominant-baseline: central;
+    text-anchor: middle;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.gantt .today-highlight {
+    fill: rgba(244, 67, 54, 0.2);
+    /*opacity: 0.5;*/
+}
+
+
+.gantt .upper-text {
+    font-size: 18px;
+    text-anchor: middle;
+    font-weight: bolder;
+    letter-spacing: 1px;
+    font-family: source_sans_proregular, sans-serif;
+}

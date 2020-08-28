@@ -1,0 +1,1 @@
+Tz.addTzInfo('MST', new Tz.StaticTzInfo(-25200))

@@ -1,0 +1,1 @@
+Tz.addTzInfo('Pacific/Pohnpei', new Tz.StaticTzInfo(39600))

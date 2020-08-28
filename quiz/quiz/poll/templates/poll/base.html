@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Quiz App</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{% static 'css/custom.css' %}" >
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="{% url 'poll:dashboard' %}">Smart Quiz</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class=""><a href="{% url 'poll:dashboard' %}">Dashboard</a></li>
+        <li><a href="#">Score</a></li>
+        <li><a href="#">Join Us</a></li>
+      </ul>
+      <form class="navbar-form navbar-left hidden" action="/action_page.php">
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="Search" name="search">
+          <div class="input-group-btn">
+            <button class="btn btn-default" type="submit">
+              <i class="glyphicon glyphicon-search"></i>
+            </button>
+          </div>
+        </div>
+      </form>
+      <div class="navbar-right">
+        <a href="{% url 'account:logout' %}">
+            <button class="btn btn-danger pull-right login" type="button">
+                Logout &nbsp;<i class="glyphicon glyphicon-user"></i>
+              </button>
+        </a>
+
+      </div>
+    </div>
+  </nav>
+
+{% block heading %}
+
+{% endblock heading %}
+
+
+{% block content %}
+
+{% endblock content %}
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
